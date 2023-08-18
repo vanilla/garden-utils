@@ -303,7 +303,7 @@ final class ArrayUtils
             } elseif (!self::isArray($arr[$piece])) {
                 throw new \InvalidArgumentException("Unexpected type in path. Expected an array or array-like object.");
             } else {
-                $arr[$piece];
+                $arr = &$arr[$piece];
             }
         }
     }
@@ -477,10 +477,10 @@ final class ArrayUtils
         $fn =
             /**
              * @param array|iterable $array
-             * @param int|null $previousLevel
+             * @param string|null $previousLevel
              * @return void
              */
-            function ($array, ?int $previousLevel = null) use (
+            function ($array, ?string $previousLevel = null) use (
                 $separator,
                 &$fn,
                 &$result,
