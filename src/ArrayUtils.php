@@ -284,6 +284,8 @@ final class ArrayUtils
      *
      * @param string $path
      * @param array|ArrayAccess $array
+     *
+     * @psalm-suppress UnusedVariable
      */
     public static function unsetByPath(string $path, &$array): void
     {
