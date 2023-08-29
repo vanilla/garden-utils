@@ -77,7 +77,7 @@ final class ArrayUtils
      *
      * @param string $path
      * @param array|ArrayAccess $array
-     * @param null $default
+     * @param mixed|null $default
      * @return mixed
      */
     public static function getByPath(string $path, $array, $default = null)
