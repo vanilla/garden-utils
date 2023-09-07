@@ -14,4 +14,10 @@ composer require vanilla/garden-utils
 
 ## Utilities
 
-Currently this package contains just utilities regarding array manipulation in `Garden\Utils\ArrayUtils`.
+### `Garden\Utils\ArrayUtils`
+
+Contains various static utilities for manipulating arrays.
+
+### `Garden\Utils\ContextException`
+
+A base exception class that allows storing some array context in it.
