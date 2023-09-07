@@ -5,7 +5,7 @@ namespace Garden\Utils;
 /**
  * Exception that can provide some context for logs.
  */
-class ContextException extends \RuntimeException implements \JsonSerializable
+class ContextException extends \RuntimeException
 {
     /** @var array Any context you want. */
     protected array $context;
@@ -70,17 +70,5 @@ class ContextException extends \RuntimeException implements \JsonSerializable
         } else {
             return 500;
         }
-    }
-
-    /**
-     * Basic json-serialize implementation.
-     */
-    public function jsonSerialize()
-    {
-        return $this->context + [
-            "message" => $this->getMessage(),
-            "code" => $this->getCode(),
-            "statusCode" => $this->getHttpStatusCode(),
-        ];
     }
 }
