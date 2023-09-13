@@ -27,16 +27,17 @@ class ContextException extends \RuntimeException
     /**
      * Add extra context to an exception.
      *
+     * This can't be an immutable clone because exceptions aren't cloneable.
+     *
      * @param array $context
      *
      * @return $this
      */
     public function withContext(array $context): self
     {
-        $ex = clone $this;
-        $ex->context = array_replace($ex->context, $context);
+        $this->context = array_replace($this->context, $context);
 
-        return $ex;
+        return $this;
     }
 
     /**
